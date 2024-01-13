@@ -1,0 +1,26 @@
+{
+	"name": "cv",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"gen": "tsx ./src/generate.tsx && bun run copy",
+		"copy": "echo 'Copying files locally...' && cp ./generated/gabriel-vs-frasao-{CV,CV-en}.pdf ~/../../mnt/c/Users/Micro/Documents/ && echo 'Done!'"
+	},
+	"dependencies": {
+		"@notionhq/client": "^2.2.14",
+		"@react-pdf/renderer": "^3.1.14",
+		"googleapis": "^130.0.0",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.5.0",
+		"@types/react": "^18.2.43",
+		"@types/react-dom": "^18.2.18",
+		"bun-types": "latest",
+		"tsx": "^4.7.0"
+	},
+	"peerDependencies": {
+		"typescript": "^5.0.0"
+	}
+}

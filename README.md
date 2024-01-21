@@ -4,7 +4,7 @@ Personal CV made programmatically with React.
 
 ## Why?
 
-Since I don't know how to use Figma to do anything, I made this project.
+Since I don't know how to use Figma (or any other design tool) to do anything, I made this project.
 
 ## How?
 

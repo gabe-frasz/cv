@@ -3,6 +3,9 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
     "gen": "tsx ./src/generate.tsx && bun run copy",
     "copy": "echo 'Copying files locally...' && cp ./generated/gabriel-vs-frasao-{CV,CV-en}.pdf ~/../../mnt/c/Users/Micro/Documents/ && echo 'Done!'"
   },
@@ -17,8 +20,11 @@
     "@biomejs/biome": "^1.5.0",
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.18",
+    "@vitejs/plugin-react": "^4.2.1",
     "bun-types": "latest",
-    "tsx": "^4.7.0"
+    "tsx": "^4.7.0",
+    "vite": "^5.0.8",
+    "vite-tsconfig-paths": "^4.3.1"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"

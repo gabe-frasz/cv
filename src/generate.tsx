@@ -1,4 +1,4 @@
-import { Document, renderToFile } from "@react-pdf/renderer";
+import { Font, renderToFile } from "@react-pdf/renderer";
 
 import { uploadFile } from "./lib";
 import { DevCV } from "./pdfs/DevCV";
@@ -20,19 +20,25 @@ const [ptDict, enDict] = await Promise.all([
 
 console.log("Generating files...");
 
+Font.register({
+	family: "GeistMono",
+	fonts: [
+		{
+			src: "src/fonts/Geist.Mono/GeistMono-Regular.otf",
+			fontWeight: "normal",
+			fontStyle: "normal",
+		},
+		{
+			src: "src/fonts/Geist.Mono/GeistMono-Bold.otf",
+			fontWeight: "bold",
+			fontStyle: "normal",
+		},
+	],
+});
+
 await Promise.all([
-	renderToFile(
-		<Document>
-			<DevCV dict={ptDict} />
-		</Document>,
-		cvPath,
-	),
-	renderToFile(
-		<Document>
-			<DevCV dict={enDict} />
-		</Document>,
-		cvEnPath,
-	),
+	renderToFile(<DevCV dict={ptDict} />, cvPath),
+	renderToFile(<DevCV dict={enDict} />, cvEnPath),
 ]);
 
 console.log("Uploading to Drive...");

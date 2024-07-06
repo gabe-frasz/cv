@@ -3,8 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "gen": "tsx ./src/generate.tsx && bun run copy",
-    "copy": "echo 'Copying files locally...' && cp ./generated/gabriel-vs-frasao-{CV,CV-en}.pdf ~/../../mnt/c/Users/Micro/Documents/ && echo 'Done!'"
+    "build": "tsx ./src/generate.tsx && bun run copy",
+    "copy": "echo 'Copying files locally...' && cp ./generated/gabriel-vs-frasao-{CV,CV-en}.pdf ~/Documents/ && echo 'Done!'"
   },
   "dependencies": {
     "@notionhq/client": "^2.2.14",
